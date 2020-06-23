@@ -1,0 +1,6 @@
+# image files
+chest_xray/test/NORMAL/*.jpeg
+chest_xray/test/PNEUMONIA/*.jpeg
+chest_xray/train/NORMAL/*.jpeg
+chest_xray/train/PNEUMONIA/*.jpeg
+
