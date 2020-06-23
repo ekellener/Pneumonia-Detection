@@ -31,6 +31,8 @@ Densenet, Resnet and CheXnet were experimented for transfer learning, among whic
 Input Image of person with pneumonia          |  heatmap          
 :-------------------------:|:-------------------------:
  <img src="results/person59_virus_116.jpeg" width="250" height="250"> |  <img src="results/heatmap.png" width="250" height="250">
+ 
+ This was further extended to build a [web applicationh](ttps://drive.google.com/file/d/1pyw6gx-nYTELV88OiIga_NGDLIPUlRBD/view)
 
 # References:
 * [Stanford ML Group](https://stanfordmlgroup.github.io/projects/chexnet/)
