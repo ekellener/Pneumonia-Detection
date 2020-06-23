@@ -2,14 +2,12 @@
 * Analyze chest xrays for diagonising pneumonia and locate the regions with heat map.
 * In this work, I used a Transfer Learning Approach to diagnose Pneumonia, by fine-tuning the CheXNet a densenet model developed by [Stanford ML Group](https://stanfordmlgroup.github.io/projects/chexnet/)
 
+# Data 
+Download chestXray data from [here](https://data.mendeley.com/datasets/rscbjbr9sj/2) to chest_xray folder
 
 # Instructions to run
 User can run each of the tasks as simple python scripts, with different options as command line arguments.Below are the sample command line executions for each tasks
 
- **Download Data:** 
-
-     Download chestXray data from [here](https://data.mendeley.com/datasets/rscbjbr9sj/2) to chest_xray folder
-     
  **Training:** 
 
      python train.py --batch-size=64 --data_dir='CHEST_XRAYS/' --lr=0.01
@@ -28,16 +26,13 @@ User can run each of the tasks as simple python scripts, with different options 
 
 # Results:
 
+Densenet, Resnet and CheXnet were experimented for transfer learning, among which CheXnet performed better with 92 % accuracy on test data.
+
 #### LBP
 Query Image            |  Search Result 1              | Search Result 2
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](queries/Hand_0008111.jpg)  |  ![](results/lbp/Hand_0008110.jpg)  |  ![](results/lbp/Hand_0008130.jpg)
 * LBP might have taken color into considerations rather than face of the image
-#### SIFT
-Query Image            |  Search Result 1              | Search Result 2
-:-------------------------:|:-------------------------:|:-------------------------:
-![](queries/Hand_0008111.jpg)  |  ![](results/sift/Hand_0008110.jpg)  |  ![](results/sift/Hand_0011498.jpg)
-* SIFT looks for key points and might have taken face of the image into major consideration.
 
 # Conclusions:
 * The intricacies of a dealing with vector based representation of multimedia objects was observed in areas spanning that can help retrieve results based on distance measures. 
