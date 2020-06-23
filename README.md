@@ -28,6 +28,6 @@ User can run each of the tasks as simple python scripts, with different options 
 
 Densenet, Resnet and CheXnet were experimented for transfer learning, among which CheXnet performed better with 92 % accuracy on test data.
 
-Input Image            |  heatmap          
+Input Image of person with pneumonia          |  heatmap          
 :-------------------------:|:-------------------------:
  <img src="results/person59_virus_116.jpeg" width="250" height="250"> |  <img src="results/heatmap.png" width="250" height="250">
