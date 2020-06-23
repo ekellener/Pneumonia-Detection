@@ -30,5 +30,5 @@ Densenet, Resnet and CheXnet were experimented for transfer learning, among whic
 
 Input Image            |  heatmap          
 :-------------------------:|:-------------------------:
-![](results/person59_virus_116.jpeg = 250x250)  |  ![](results/heatmap.png = 250x250) 
+![](results/person59_virus_116.jpeg =250x250)  |  ![](results/heatmap.png =250x250) 
 * This chest xray is of the person with pneumonia
