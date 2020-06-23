@@ -24,18 +24,11 @@ User can run each of the tasks as simple python scripts, with different options 
 
     python heatmap.py --model_path=runs/debug/chexnet_0.01_5 --inp_img_pth='chest_xray/test/PNEUMONIA/person59_virus_116.jpeg' --out_img_pth='heatmap.png'
 
-# Results:
+# Results and Conclusions:
 
 Densenet, Resnet and CheXnet were experimented for transfer learning, among which CheXnet performed better with 92 % accuracy on test data.
 
-#### LBP
-Query Image            |  Search Result 1              | Search Result 2
-:-------------------------:|:-------------------------:|:-------------------------:
-![](queries/Hand_0008111.jpg)  |  ![](results/lbp/Hand_0008110.jpg)  |  ![](results/lbp/Hand_0008130.jpg)
-* LBP might have taken color into considerations rather than face of the image
-
-# Conclusions:
-* The intricacies of a dealing with vector based representation of multimedia objects was observed in areas spanning that can help retrieve results based on distance measures. 
-* Eﬃcient representation of multimedia objects using feature vectors using feature descriptors-LBP and SIFT was implemented, storing the obtained results in a ﬁle system and to see how it helps the ease the process of comparison.
-* For now, cosine similarity was used to measure similarity between LBP and FLANN Matcher was used to match the keypoints in SIFT.
-* The results can be further improved by experimenting with different similarity metrics like chi square distance.
+Input Image            |  heatmap          
+:-------------------------:|:-------------------------:
+![](results/person59_virus_116.jpeg)  |  ![](results/heatmap.png) 
+* This chest xray is of the person with pneumonia
