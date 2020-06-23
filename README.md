@@ -10,7 +10,7 @@ User can run each of the tasks as simple python scripts, with different options 
 
  **Training:** 
 
-     python train.py --batch-size=64 --data_dir='CHEST_XRAYS/' --lr=0.01
+     python train.py --batch-size=64 --data_dir='chest-xray/' --lr=0.01
 
 **Evaluation:** 
 
