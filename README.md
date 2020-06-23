@@ -34,5 +34,7 @@ Input Image of person with pneumonia          |  heatmap
 
 # References:
 [Stanford ML Group](https://stanfordmlgroup.github.io/projects/chexnet/)
+
 [Reproduce CheXNet](https://medium.com/@jrzech/reproducing-chexnet-with-pytorch-695ff9c3bf66)
+
 [Data](https://data.mendeley.com/datasets/rscbjbr9sj/2)
