@@ -57,8 +57,9 @@ class HeatmapGenerator ():
         
         input = torch.autograd.Variable(imageData)
         
-        self.model.cuda()
-        output = self.model(input.cuda())
+        #self.model.cuda()
+        #output = self.model(input.cuda())
+        output = self.model(input)
         
         #---- Generate heatmap
         heatmap = None

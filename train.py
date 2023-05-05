@@ -17,6 +17,7 @@ from pathlib import Path
 
 train_on_gpu = check_gpu()
 
+#should only be CPU
 if not train_on_gpu:
     print('Cuda is not available for traning.Traning on CPU.......')
 else:

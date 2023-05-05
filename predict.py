@@ -31,6 +31,7 @@ def predict_image(model,image_path):
 
     # Turn the input into a Variable
     input = Variable(image_tensor)
+    #should ignore 
     if torch.cuda.is_available():
         input = input.cuda()
 

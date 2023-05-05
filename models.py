@@ -59,12 +59,13 @@ def chexnet():
   
     pathModel = 'chexnet/models/m-25012018-123527.pth.tar'
     
-    model = DenseNet121(nnClassCount).cuda()
+    #model = DenseNet121(nnClassCount).cuda()
+    model = DenseNet121(nnClassCount)
 
 
   
   
-    modelCheckpoint = torch.load(pathModel)
+    modelCheckpoint = torch.load(pathModel,map_location=torch.device('cpu'))
 
     state_dict = modelCheckpoint['state_dict']
     remove_data_parallel = True # Change if you don't want to use nn.DataParallel(model)

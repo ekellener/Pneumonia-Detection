@@ -2,8 +2,6 @@ from torchvision import datasets, transforms
 import torch
 import os
 
-# checking if cuda is available or not
-
 
 
 def generate_trainloaders(batch_size  = 32, num_workers = 0, data_dir = 'chest_xray'):

@@ -13,11 +13,14 @@ import numpy as np
 from models import chexnet,resnet
 
 
-def cuda(x):
-    return x.cuda(async=True) if torch.cuda.is_available() else x
 
+def cuda(x):
+    return x.cuda() if torch.cuda.is_available() else x
+
+#default to false
 def check_gpu():
-    train_on_gpu = torch.cuda.is_available()
+    #train_on_gpu = torch.cuda.is_available()
+    train_on_gpu = False;
 
     return train_on_gpu
 
@@ -35,8 +38,8 @@ def get_model(model_path):
     state = {key.replace('module.', ''): value for key, value in state['model'].items()}
     model.load_state_dict(state)
 
-    if torch.cuda.is_available():
-        return model.cuda()
+    #if torch.cuda.is_available():
+    #    return model.cuda()
 
     return model
 
@@ -56,7 +59,7 @@ def fit(args,model=None,criterion = None, init_optimizer= None,train_loader = No
     model_path = root /'{model}_{lr}_{epoch}'.format(model = base_model,lr = lr, epoch = n_epochs) 
 
     if model_path.exists():
-        state = torch.load(str(model_path))
+        state = torch.load(str(model_path),torch.device('cpu'))
         epoch = state['epoch']
         step  = state['step']
         model.load_state_dict(state['model'])
