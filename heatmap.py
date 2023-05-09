@@ -11,6 +11,7 @@ import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torchvision
 import torchvision.transforms as transforms
+from utils import check_gpu
 
 
 #-------------------------------------------------------------------------------- 
@@ -57,9 +58,11 @@ class HeatmapGenerator ():
         
         input = torch.autograd.Variable(imageData)
         
-        #self.model.cuda()
-        #output = self.model(input.cuda())
-        output = self.model(input)
+        if check_gpu():
+            self.model.cuda()
+            output = self.model(input.cuda())
+        else:
+            output = self.model(input)
         
         #---- Generate heatmap
         heatmap = None

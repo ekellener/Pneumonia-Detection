@@ -3,4 +3,8 @@ chest_xray/test/NORMAL/*.jpeg
 chest_xray/test/PNEUMONIA/*.jpeg
 chest_xray/train/NORMAL/*.jpeg
 chest_xray/train/PNEUMONIA/*.jpeg
+chest-xray/test/NORMAL/*.jpeg
+chest-xray/test/PNEUMONIA/*.jpeg
+chest-xray/train/NORMAL/*.jpeg
+chest-xray/train/PNEUMONIA/*.jpeg
 

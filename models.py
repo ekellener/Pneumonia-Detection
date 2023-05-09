@@ -29,7 +29,6 @@ class DenseNet121(nn.Module):
 def resnet(num_of_classes=None):
   
     resnet18 = models.resnet18(pretrained = True)
-
     resnet18.fc  = torch.nn.Linear(resnet18.fc.in_features, num_of_classes)
     
     return resnet18
@@ -58,14 +57,15 @@ def chexnet():
     nnClassCount = 14
   
     pathModel = 'chexnet/models/m-25012018-123527.pth.tar'
-    
-    #model = DenseNet121(nnClassCount).cuda()
-    model = DenseNet121(nnClassCount)
+    if torch.cuda.is_available():
+        model = DenseNet121(nnClassCount).cuda()
+    else:
+        model = DenseNet121(nnClassCount)
 
-
-  
-  
-    modelCheckpoint = torch.load(pathModel,map_location=torch.device('cpu'))
+    if not torch.cuda.is_available():
+        modelCheckpoint = torch.load(pathModel,map_location=torch.device('cpu'))
+    else:
+        modelCheckpoint = torch.load(pathModel)
 
     state_dict = modelCheckpoint['state_dict']
     remove_data_parallel = True # Change if you don't want to use nn.DataParallel(model)
